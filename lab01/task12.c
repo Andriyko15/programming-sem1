@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main(void) {
-    // Оголошення змінних (використовуємо float для чисел з рухомою комою)
+    // Змінні
     float V, S, t;
 
-    // Запит та введення розміру файлу
+    // Розмір файлу
     printf("Vvedit rozmir faylu V (MB): ");
     scanf("%f", &V);
 
-    // Запит та введення пропускної здатності
+    // Пропускна здатність
     printf("Vvedit propusknu zdatnist S (Mbit/s): ");
     scanf("%f", &S);
 
