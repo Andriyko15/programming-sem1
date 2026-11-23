@@ -7,7 +7,7 @@ int main(void) {
     printf("Vvedit argument X: ");
     scanf("%lf", &x);
     printf("Vvedit tochnist epsilon (napryklad 1e-5): ");
-    scanf("%lf", &epsilon);
+    scanf("%le", &epsilon);
 
     double sum = 1.0;
     double a_n = 1.0;
