@@ -20,12 +20,11 @@ int main(void) {
     printf("|     X      |      Y      |\n");
     printf("----------------------------\n");
 
-    for (x = x_start; x <= x_end; x += dx) {
+    for (x = x_start; x <= x_end + 1e-9; x += dx) {
         if (x <= 1.0) {
             y = 2.0 * x + 1.0;
             printf("| %10.2lf | %11.4lf |\n", x, y);
         } else if (x > 1.0 && x <= 3.0) {
-            // Захист від ділення на нуль при X = 2
             if (fabs(x - 2.0) < 1e-9) { 
                 printf("| %10.2lf | [Ne vyznacheno] |\n", x);
             } else {

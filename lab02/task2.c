@@ -9,20 +9,17 @@ int main(void) {
     printf("Vvedit tochnist epsilon (napryklad 1e-5): ");
     scanf("%lf", &epsilon);
 
-    // Область збіжності для cos(x) - від мінус нескінченності до плюс нескінченності
-    double sum = 1.0;     // Перший член ряду (при n=0) дорівнює 1
-    double a_n = 1.0;     // Поточний член ряду
-    int n = 1;            // Лічильник ітерацій
-    int max_iter = 100000; // Захисний лічильник (Timeout Guard)
+    double sum = 1.0;
+    double a_n = 1.0;
+    int n = 1;
+    int max_iter = 100000;
 
-    // Цикл працює, поки модуль поточного доданка більший або дорівнює точності
     while (fabs(a_n) >= epsilon) {
         if (n > max_iter) {
             printf("Uvaha: dosyahnuto limit iteratsiy! Ryad rozbihaietsia.\n");
             break;
         }
         
-        // Рекурентне співвідношення для cos(x)
         a_n = a_n * (- (x * x) / ((2.0 * n - 1.0) * (2.0 * n)));
         sum += a_n;
         n++;
